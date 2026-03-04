@@ -5,30 +5,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { WishlistProvider } from './context/WishlistContext';
 
-// Import Pages
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
-import Wishlist from './pages/Wishlist';
-import MyAccount from './pages/MyAccount';
-import Orders from './pages/Orders';
-import TrackOrder from './pages/TrackOrder';
-import Payment from './pages/Payment';
-import About from './pages/About';
-import ComingSoon from './pages/ComingSoon';
+// Import Layout Components
+import Header from './components/layout/Header/Header';
+import Footer from './components/layout/Footer/Footer';
 
-// TODO: Create these layout components — Navbar and Footer
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
+// Import Pages
+import Home from './pages/Home/Home';
+import Shop from './pages/Shop/Shop';
+import Cart from './pages/Cart/Cart';
+import Checkout from './pages/Checkout/Checkout';
+import Wishlist from './pages/Wishlist/Wishlist';
+import MyAccount from './pages/MyAccount/MyAccount';
+import Orders from './pages/Orders/Orders';
+import TrackOrder from './pages/TrackOrder/TrackOrder';
+import Payment from './pages/Payment/Payment';
+import About from './pages/About/About';
+import ComingSoon from './pages/ComingSoon/ComingSoon';
 
 function App() {
   return (
     <CartProvider>
       <WishlistProvider>
         <Router>
-          {/* TODO: Uncomment once you build your Navbar and Footer components */}
-          {/* <Navbar /> */}
+          <Header />
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -44,7 +43,7 @@ function App() {
             <Route path="/coming-soon" element={<ComingSoon />} />
           </Routes>
 
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </WishlistProvider>
     </CartProvider>

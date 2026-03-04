@@ -1,0 +1,22 @@
+/* Newsletter.module.css */
+.newsletter {
+   padding: 2rem;
+   text-align: center;
+   background: #f5f5f5;
+}
+
+.newsletter input {
+   padding: 0.5rem 1rem;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   margin-right: 0.5rem;
+}
+
+.newsletter button {
+   padding: 0.5rem 1.2rem;
+   background: #2e7d32;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}

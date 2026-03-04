@@ -1,0 +1,9 @@
+/* Footer.module.css */
+/* TODO: Port footer styles from your original styles.css */
+.footer {
+   width: 100%;
+   background: #1a1a1a;
+   color: #fff;
+   padding: 2rem 1rem;
+   text-align: center;
+}
