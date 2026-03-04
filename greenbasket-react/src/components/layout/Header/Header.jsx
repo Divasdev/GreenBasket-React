@@ -13,17 +13,57 @@ function Header() {
    const { wishlistCount } = useWishlist();
 
    return (
-      <header className={styles.header}>
-         {/* TODO: Build your header here */}
-         <p>Header – build me! (Cart: {cartCount} | Wishlist: {wishlistCount})</p>
-         <nav>
-            <Link to="/">Home</Link> |{' '}
-            <Link to="/shop">Shop</Link> |{' '}
-            <Link to="/cart">Cart ({cartCount})</Link> |{' '}
-            <Link to="/wishlist">Wishlist</Link> |{' '}
-            <Link to="/about">About</Link>
-         </nav>
-      </header>
+      <>
+         <header className={styles.header}>
+
+
+            {<div className="topmost-div">
+               <span className="call-us">Call-Us-:+91 7005869756</span>
+               <span className="promo-tag">
+                  Sign up and GET 25% OFF for your first order.{" "}
+                  <a href="" className="signuplink">
+                     Sign Up now
+                  </a>
+               </span>
+               <div className="social-links">
+                  <a href="">
+      <img
+         src="../../../assets/assets/images/HubSpot Brand Kit/Logo/JPEG/facebook.png"
+         className="facebook-logo"
+         alt="facebook"
+      />
+                  </a>
+                  <a href="">
+         <img
+            src="../../../assets/assets/images/HubSpot Brand Kit/Logo/JPEG/instagram.png"
+            className="instagram-logo"
+            alt="instagram"
+         />
+                  </a>
+                  <a href="">
+            <img
+               src="../../../assets/assets/images/HubSpot Brand Kit/Logo/JPEG/twitter.png"
+               className="twitter-logo"
+               alt="twitter"
+            />
+                  </a>
+               </div>
+            </div>
+            }
+
+
+
+
+            <p>Header – build me! (Cart: {cartCount} | Wishlist: {wishlistCount})</p>
+            <nav>
+               <Link to="/">Home</Link> |{' '}
+               <Link to="/shop">Shop</Link> |{' '}
+               <Link to="/cart">Cart ({cartCount})</Link> |{' '}
+               <Link to="/wishlist">Wishlist</Link> |{' '}
+               <Link to="/about">About</Link>
+            </nav>
+         </header>
+      </>
    );
 }
 

@@ -58,8 +58,8 @@ export function CartProvider({ children }) {
 }
 
 // Custom hook — use this inside any component: const { cartItems, addToCart } = useCart();
-export function useCart() {
-   return useContext(CartContext);
-}
+//export function useCart() {
+   //return useContext(CartContext);
+//}
 
 export default CartContext;
