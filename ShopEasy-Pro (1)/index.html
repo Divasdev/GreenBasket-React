@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy Pro - Your Premium Shopping Destination</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <div class="header__logo">
+                    <h1>ShopEasy Pro</h1>
+                    <span class="header__tagline">Premium Shopping Experience</span>
+                </div>
+                <div class="header__search">
+                    <input type="text" id="searchInput" placeholder="Search for products, brands and more..." class="search__input">
+                    <button class="search__button btn btn--primary">
+                        <span>🔍</span>
+                    </button>
+                </div>
+                <div class="header__actions">
+                    <button class="header__action" id="accountBtn">
+                        <span>👤</span>
+                        <span>Account</span>
+                    </button>
+                    <button class="header__action" id="cartBtn">
+                        <span>🛒</span>
+                        <span>Cart</span>
+                        <span class="cart__count" id="cartCount">0</span>
+                    </button>
+                    <button class="btn btn--primary" id="signInBtn">Sign In</button>
+                </div>
+            </div>
+            <nav class="header__nav">
+                <div class="nav__categories">
+                    <div class="category-dropdown" data-category="electronics">
+                        <span>Electronics</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="smartphones">Smartphones</a>
+                            <a href="#" data-subcategory="laptops">Laptops</a>
+                            <a href="#" data-subcategory="tablets">Tablets</a>
+                            <a href="#" data-subcategory="audio">Audio</a>
+                            <a href="#" data-subcategory="gaming">Gaming</a>
+                            <a href="#" data-subcategory="cameras">Cameras</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" data-category="fashion">
+                        <span>Fashion</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="men">Men</a>
+                            <a href="#" data-subcategory="women">Women</a>
+                            <a href="#" data-subcategory="kids">Kids</a>
+                            <a href="#" data-subcategory="footwear">Footwear</a>
+                            <a href="#" data-subcategory="accessories">Accessories</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown grocery-special" data-category="groceries">
+                        <span>🛒 Groceries</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="fresh-produce">Fresh Produce</a>
+                            <a href="#" data-subcategory="dairy-eggs">Dairy & Eggs</a>
+                            <a href="#" data-subcategory="meat-seafood">Meat & Seafood</a>
+                            <a href="#" data-subcategory="pantry">Pantry Staples</a>
+                            <a href="#" data-subcategory="beverages">Beverages</a>
+                            <a href="#" data-subcategory="snacks">Snacks</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" data-category="home-kitchen">
+                        <span>Home & Kitchen</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="furniture">Furniture</a>
+                            <a href="#" data-subcategory="appliances">Appliances</a>
+                            <a href="#" data-subcategory="decor">Decor</a>
+                            <a href="#" data-subcategory="cookware">Cookware</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" data-category="books">
+                        <span>Books & Media</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="books">Books</a>
+                            <a href="#" data-subcategory="movies">Movies</a>
+                            <a href="#" data-subcategory="music">Music</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" data-category="health">
+                        <span>Health & Beauty</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="personal-care">Personal Care</a>
+                            <a href="#" data-subcategory="cosmetics">Cosmetics</a>
+                            <a href="#" data-subcategory="supplements">Health Supplements</a>
+                        </div>
+                    </div>
+                    <div class="category-dropdown" data-category="sports">
+                        <span>Sports & Outdoors</span>
+                        <div class="dropdown-content">
+                            <a href="#" data-subcategory="fitness">Fitness</a>
+                            <a href="#" data-subcategory="sports-equipment">Sports Equipment</a>
+                            <a href="#" data-subcategory="outdoor">Outdoor Gear</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <section id="homePage" class="page active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="container">
+                    <div class="hero__content">
+                        <div class="offer-carousel" id="offerCarousel">
+                            <!-- Offers will be dynamically loaded -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Today's Deals -->
+            <section class="deals-section">
+                <div class="container">
+                    <h2>Today's Deals - Limited Time Offers!</h2>
+                    <div class="deals-grid" id="todaysDeals">
+                        <!-- Deals will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Categories -->
+            <section class="categories-section">
+                <div class="container">
+                    <h2>Shop by Category</h2>
+                    <div class="categories-grid">
+                        <div class="category-card" data-category="electronics">
+                            <div class="category-icon">📱</div>
+                            <h3>Electronics</h3>
+                            <p>Latest gadgets & technology</p>
+                        </div>
+                        <div class="category-card grocery-highlight" data-category="groceries">
+                            <div class="category-icon">🛒</div>
+                            <h3>Fresh Groceries</h3>
+                            <p>Farm fresh & daily essentials</p>
+                        </div>
+                        <div class="category-card" data-category="fashion">
+                            <div class="category-icon">👔</div>
+                            <h3>Fashion</h3>
+                            <p>Trendy clothes & accessories</p>
+                        </div>
+                        <div class="category-card" data-category="home-kitchen">
+                            <div class="category-icon">🏠</div>
+                            <h3>Home & Kitchen</h3>
+                            <p>Everything for your home</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trending Products -->
+            <section class="trending-section">
+                <div class="container">
+                    <h2>Trending Products</h2>
+                    <div class="products-carousel" id="trendingProducts">
+                        <!-- Trending products will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Testimonials -->
+            <section class="testimonials-section">
+                <div class="container">
+                    <h2>What Our Customers Say</h2>
+                    <div class="testimonials-grid" id="testimonials">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="newsletter-section">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated with Our Latest Offers</h2>
+                        <p>Get exclusive deals and early access to sales</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email address" class="newsletter-input">
+                            <button class="btn btn--primary">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Products Page -->
+        <section id="productsPage" class="page">
+            <div class="container">
+                <div class="products-header">
+                    <h1 id="pageTitle">All Products</h1>
+                    <div class="products-filters">
+                        <select id="sortSelect" class="form-control">
+                            <option value="popularity">Sort by Popularity</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Customer Rating</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                        <select id="filterSelect" class="form-control">
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="groceries">Groceries</option>
+                            <option value="home-kitchen">Home & Kitchen</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here -->
+                </div>
+                <div id="loadingSpinner" class="loading-spinner hidden">
+                    <div class="spinner"></div>
+                    <p>Loading products...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grocery Page -->
+        <section id="groceryPage" class="page">
+            <div class="container">
+                <div class="grocery-header">
+                    <h1>🛒 Fresh Groceries & Daily Essentials</h1>
+                    <p>Farm fresh produce delivered to your doorstep</p>
+                </div>
+                <div class="grocery-categories">
+                    <button class="grocery-tab active" data-category="fresh-produce">Fresh Produce</button>
+                    <button class="grocery-tab" data-category="dairy-eggs">Dairy & Eggs</button>
+                    <button class="grocery-tab" data-category="meat-seafood">Meat & Seafood</button>
+                    <button class="grocery-tab" data-category="pantry">Pantry Staples</button>
+                    <button class="grocery-tab" data-category="beverages">Beverages</button>
+                    <button class="grocery-tab" data-category="snacks">Snacks & Sweets</button>
+                </div>
+                <div class="grocery-products" id="groceryProducts">
+                    <!-- Grocery products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Detail Page -->
+        <section id="productDetailPage" class="page">
+            <div class="container">
+                <div id="productDetail">
+                    <!-- Product detail content will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Page -->
+        <section id="cartPage" class="page">
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <div class="cart-content">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be displayed here -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Order Summary</h3>
+                                <div class="summary-line">
+                                    <span>Subtotal:</span>
+                                    <span id="cartSubtotal">$0.00</span>
+                                </div>
+                                <div class="summary-line">
+                                    <span>Shipping:</span>
+                                    <span id="cartShipping">$0.00</span>
+                                </div>
+                                <div class="summary-line">
+                                    <span>Tax:</span>
+                                    <span id="cartTax">$0.00</span>
+                                </div>
+                                <hr>
+                                <div class="summary-line total">
+                                    <span>Total:</span>
+                                    <span id="cartTotal">$0.00</span>
+                                </div>
+                                <button class="btn btn--primary btn--full-width" id="proceedToCheckout">
+                                    Proceed to Checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Page -->
+        <section id="checkoutPage" class="page">
+            <div class="container">
+                <h1>Checkout</h1>
+                <div class="checkout-content">
+                    <div class="checkout-form">
+                        <div class="checkout-step active" id="step1">
+                            <h3>1. Shipping Address</h3>
+                            <form class="address-form">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Address Line 1</label>
+                                    <input type="text" class="form-control" id="address1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="form-control" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">ZIP Code</label>
+                                    <input type="text" class="form-control" id="zipCode" required>
+                                </div>
+                                <button type="button" class="btn btn--primary" id="continueToPayment">
+                                    Continue to Payment
+                                </button>
+                            </form>
+                        </div>
+                        <div class="checkout-step" id="step2">
+                            <h3>2. Payment Method</h3>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <span>💳 Credit/Debit Card</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="paypal">
+                                    <span>🅿️ PayPal</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="apple">
+                                    <span>📱 Apple Pay</span>
+                                </label>
+                            </div>
+                            <div class="card-form">
+                                <div class="form-group">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn--primary" id="placeOrder">
+                                Place Order
+                            </button>
+                        </div>
+                    </div>
+                    <div class="checkout-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Order Summary</h3>
+                                <div id="checkoutItems"></div>
+                                <hr>
+                                <div class="summary-line total">
+                                    <span>Total:</span>
+                                    <span id="checkoutTotal">$0.00</span>
+                                </div>
+                                <div class="delivery-info">
+                                    <p><strong>Estimated Delivery:</strong></p>
+                                    <p id="deliveryDate"></p>
+                                    <small>Powered by Amazon/Flipkart fulfillment network</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Confirmation Page -->
+        <section id="confirmationPage" class="page">
+            <div class="container">
+                <div class="confirmation-content">
+                    <div class="success-icon">✅</div>
+                    <h1>Order Placed Successfully!</h1>
+                    <p>Thank you for your purchase. Your order has been confirmed and is being processed.</p>
+                    <div class="order-details" id="orderDetails">
+                        <!-- Order details will be populated here -->
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn btn--primary" id="trackOrder">Track Your Order</button>
+                        <button class="btn btn--secondary" id="continueShopping">Continue Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account/Profile Page -->
+        <section id="accountPage" class="page">
+            <div class="container">
+                <h1>My Account</h1>
+                <div class="account-tabs">
+                    <button class="tab-btn active" data-tab="orders">Order History</button>
+                    <button class="tab-btn" data-tab="profile">Profile Settings</button>
+                    <button class="tab-btn" data-tab="addresses">Saved Addresses</button>
+                    <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+                </div>
+                <div class="tab-content">
+                    <div id="orders" class="tab-panel active">
+                        <h3>Your Orders</h3>
+                        <div id="orderHistory"></div>
+                    </div>
+                    <div id="profile" class="tab-panel">
+                        <h3>Profile Information</h3>
+                        <p>Manage your profile settings and preferences.</p>
+                    </div>
+                    <div id="addresses" class="tab-panel">
+                        <h3>Saved Addresses</h3>
+                        <p>Manage your delivery addresses.</p>
+                    </div>
+                    <div id="wishlist" class="tab-panel">
+                        <h3>Your Wishlist</h3>
+                        <div id="wishlistItems"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">About Us</a></li>
+                        <li><a href="#" target="_blank">Careers</a></li>
+                        <li><a href="#" target="_blank">Press</a></li>
+                        <li><a href="#" target="_blank">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Help Center</a></li>
+                        <li><a href="#" target="_blank">Contact Us</a></li>
+                        <li><a href="#" target="_blank">Returns & Refunds</a></li>
+                        <li><a href="#" target="_blank">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Privacy Policy</a></li>
+                        <li><a href="#" target="_blank">Terms of Service</a></li>
+                        <li><a href="#" target="_blank">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 ShopEasy Pro. All rights reserved. | Powered by Amazon & Flipkart fulfillment network</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="live-chat" id="liveChat">
+        <div class="chat-icon">💬</div>
+        <div class="chat-tooltip">Need help? Chat with us!</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -33,12 +33,23 @@
 ---
 
 ## Phase 5: Building Reusable Components (READY FOR PRACTICE)
+
 Extract common UI patterns from the HTML files into React components:
 - [ ] **Header / Navbar**: Convert the `<header>` in `index.html` to `Header.jsx`.
 - [ ] **Footer**: Convert the footer HTML into `Footer.jsx`.
 - [ ] **ProductCard**: Create `ProductCard.jsx` taking props (image, title, price, discount).
 - [ ] **CategoryCard**: Create `CategoryCard.jsx` based on the `.category-card` loops.
 - [ ] **PromoCard**: Create `PromoCard.jsx` for the discount and weekly deal banners.
+
+
+
+
+
+
+
+
+
+
 
 ## Phase 6: Converting Pages (READY FOR PRACTICE)
 Convert individual HTML files into React Page Components inside `src/pages/`:
