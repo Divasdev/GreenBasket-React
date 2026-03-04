@@ -1,68 +1,67 @@
-# React Migration Tasks
+# React Migration Plan – **GreenBasket**
+> **Current Goal:** Migrate all UI components (HTML/CSS) by **March 10th**.
+> **Logic (Phase 7 & 8):** Deferred until UI is complete.
 
-Welcome to the React Migration Plan for **GreenBasket**! This document breaks down the process of converting the original HTML/CSS/JS files (located in `old-html,css,js`) into a modern, component-based React application.
+## Phase 1: Project Setup (COMPLETED)
+- [x] Ensure Node.js is installed on your machine.
+- [x] Initialize the React project with Vite.
+- [x] Navigate to your project folder (`cd greenbasket-react`).
+- [x] Run `npm install` to install core dependencies.
+- [x] Install React Router for navigation: `npm install react-router-dom`.
+- [x] Check if `vite.config.js` and `package.json` are appropriately set up.
+- [x] Start the development server using `npm run dev` to verify the installation works.
 
-## Phase 1: Project Setup
-- [ ] Ensure Node.js is installed on your machine.
-- [ ] Initialize the React project with Vite (e.g., `npm create vite@latest greenbasket-react -- --template react` or use the existing `greenbasket-react` initialized folder).
-- [ ] Navigate to your project folder (`cd greenbasket-react`).
-- [ ] Run `npm install` to install core dependencies.
-- [ ] Install React Router for navigation: `npm install react-router-dom`.
-- [ ] Check if `vite.config.js` and `package.json` are appropriately set up.
-- [ ] Start the development server using `npm run dev` to verify the installation works.
+## Phase 2: Folder Structure Creation (COMPLETED)
+- [x] `src/assets/` - For images, global CSS, and fonts.
+- [x] `src/components/` - For reusable UI components (Layout, UI, Sections).
+- [x] `src/pages/` - For page-level components (Home, Shop, Cart, etc.).
+- [x] `src/context/` - For global state management (CartContext, WishlistContext).
+- [x] `src/hooks/` - For custom React hooks.
+- [x] `src/data/` - For utility data and constants.
 
-## Phase 2: Folder Structure Creation
-Create the following directories inside the `src` folder for a scalable architecture:
-- [ ] `src/assets/` - For images, global CSS, and fonts.
-- [ ] `src/components/` - For reusable UI components (e.g., Header, Footer, Cards).
-- [ ] `src/components/ui/` - (Optional) For base UI like generic Buttons, Inputs.
-- [ ] `src/pages/` - For page-level components (Home, Shop, Cart, etc.).
-- [ ] `src/context/` - For global state management (e.g., CartContext, UserContext).
-- [ ] `src/hooks/` - For custom React hooks.
-- [ ] `src/utils/` - For utility functions and constants.
+## Phase 3: Asset Migration (COMPLETED)
+- [x] Copy all images from `old-html,css,js/assets/images/` to `src/assets/assets/images/`.
+- [x] Copy global styles to `src/styles/global.css`.
+- [x] Update any image or font paths in the CSS (Done in global.css).
 
-## Phase 3: Asset Migration
-- [ ] Copy all images from `old-html,css,js/assets/images/` to `src/assets/images/`.
-- [ ] Copy global styles from `old-html,css,js/assets/css/styles.css` to `src/index.css` or `src/assets/css/global.css`.
-- [ ] Update any image or font paths in the CSS to reflect the new Vite asset handling (using relative paths or `/assets/...`).
+## Phase 4: Setting up Global Layout & Routing (COMPLETED)
+- [x] Set up routing in `src/App.jsx` using `BrowserRouter`, `Routes`, and `Route`.
+- [x] Define placeholder route components in `src/pages/`.
+- [x] Wrap the main application with necessary Context Providers (`CartProvider`, `WishlistProvider`).
+- [x] Create `Header` and `Footer` component stubs and include them in `App.jsx`.
 
-## Phase 4: Setting up Global Layout & Routing
-- [ ] Create a `Layout.jsx` component that includes the global `Header` and `Footer`.
-- [ ] Set up routing in `src/App.jsx` using `BrowserRouter`, `Routes`, and `Route` from `react-router-dom`.
-- [ ] Define placeholder route components in `src/pages/` to test routing (e.g., `Home.jsx`, `Shop.jsx`, `Cart.jsx`).
-- [ ] Wrap the main application with necessary Context Providers (e.g., `CartProvider`).
+---
 
-## Phase 5: Building Reusable Components
+## Phase 5: Building Reusable Components (READY FOR PRACTICE)
 Extract common UI patterns from the HTML files into React components:
-- [ ] **Header / Navbar**: Convert the `<header>` in `index.html` to `Header.jsx`. Handle responsive menu toggles with React state instead of hidden checkboxes.
-- [ ] **Footer**: Convert the footer HTML (if present) into `Footer.jsx`.
-- [ ] **ProductCard**: Create `ProductCard.jsx` taking props (image, title, price, discount) based on the article cards in `index.html`.
+- [ ] **Header / Navbar**: Convert the `<header>` in `index.html` to `Header.jsx`.
+- [ ] **Footer**: Convert the footer HTML into `Footer.jsx`.
+- [ ] **ProductCard**: Create `ProductCard.jsx` taking props (image, title, price, discount).
 - [ ] **CategoryCard**: Create `CategoryCard.jsx` based on the `.category-card` loops.
 - [ ] **PromoCard**: Create `PromoCard.jsx` for the discount and weekly deal banners.
 
-## Phase 6: Converting Pages
+## Phase 6: Converting Pages (READY FOR PRACTICE)
 Convert individual HTML files into React Page Components inside `src/pages/`:
-- [ ] **Home Page** (`index.html` -> `Home.jsx`): Compose using Hero, Categories, Promos, and Best Seller components.
-- [ ] **Shop Page** (`shop.html` -> `Shop.jsx`): Map through a list of products and render `ProductCard`s.
-- [ ] **Cart Page** (`cart.html` -> `Cart.jsx`): Build cart table and summary sections.
-- [ ] **Checkout Page** (`checkout.html` -> `Checkout.jsx`): Create form inputs and order summary.
-- [ ] **Wishlist Page** (`wishlist.html` -> `Wishlist.jsx`): Render favored items.
-- [ ] **User Account Pages** (`myaccount.html`, `orders.html` -> `AccountLayout.jsx`, `Profile.jsx`, `Orders.jsx`).
-- [ ] **Other informational pages** (`about.html`, `coming-soon.html` -> `About.jsx`, `ComingSoon.jsx`).
+- [ ] **Home Page** (`index.html` -> `Home/Home.jsx`)
+- [ ] **Shop Page** (`shop.html` -> `Shop/Shop.jsx`)
+- [ ] **Cart Page** (`cart.html` -> `Cart/Cart.jsx`)
+- [ ] **Checkout Page** (`checkout.html` -> `Checkout/Checkout.jsx`)
+- [ ] **Wishlist Page** (`wishlist.html` -> `Wishlist/Wishlist.jsx`)
+- [ ] **User Account Pages** (`myaccount.html`, `orders.html`)
+- [ ] **About Page** (`about.html` -> `About/About.jsx`)
 
-## Phase 7: Migrating Vanilla JS to React Hooks/Logic
-- [ ] Convert Vanilla JS countdown timers (e.g., in the Summer Discount section) to a `useEffect` and `useState` interval inside the relevant component.
-- [ ] Convert manual DOM manipulators (e.g., `document.querySelector('.cart-badge')`) into React state bindings.
-- [ ] Handle form submissions (search, login, checkout) with React forms or controlled inputs (e.g., `useState`).
+## Phase 7: Migrating Vanilla JS to React Hooks/Logic (DEFERRED)
+- [ ] Convert Vanilla JS countdown timers to `useCountdown`.
+- [ ] Convert manual DOM manipulators to state bindings.
+- [ ] Handle form submissions with React forms.
 
-## Phase 8: State Management Integration
-- [ ] Create `CartContext.jsx` to hold cart items and manage global cart quantity.
-- [ ] Wire up "Add to Cart" buttons in `ProductCard` to dispatch actions to the CartContext.
-- [ ] Update the Header's `.cart-badge` to dynamically display the total items from context.
+## Phase 8: State Management Integration (DEFERRED)
+- [ ] Wire up "Add to Cart" buttons to `CartContext`.
+- [ ] Update the Header's `.cart-badge` dynamically.
 
 ## Phase 9: Cleanup and Optimization
-- [ ] Verify there are no `class="..."` attributes remaining (must be `className="..."`).
-- [ ] Ensure all `<img>` tags have `alt` text and self-close (`<img />`).
-- [ ] Ensure `for` attributes in labels are changed to `htmlFor`.
-- [ ] Run `npm run lint` if ESLint is configured, to check for code quality.
-- [ ] Finally, run `npm run build` to verify the application builds without errors.
+- [ ] Rename `class` to `className`.
+- [ ] Self-close all `<img>` and `<br>` tags.
+- [ ] Rename `for` to `htmlFor`.
+- [ ] Run `npm run lint`.
+- [ ] Verify final build with `npm run build`.
