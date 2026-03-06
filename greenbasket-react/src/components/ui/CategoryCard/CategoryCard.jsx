@@ -1,12 +1,16 @@
-// CategoryCard Component
-// TODO: Build this reusable UI component
-import styles from './CategoryCard.module.css';
+import { Link } from 'react-router-dom';
 
-function CategoryCard(props) {
+function CategoryCard({ image, title, count }) {
   return (
-    <div className={styles.wrapper}>
-      <p>CategoryCard – build me!</p>
-    </div>
+    <Link to="/shop" className="category-card">
+      <div className="thumb-wrap">
+        <img src={image} alt={title} className="category-thumb" />
+      </div>
+      <div className="category-body">
+        <h4 className="category-title">{title}</h4>
+        <p className="category-count">{count} products</p>
+      </div>
+    </Link>
   );
 }
 

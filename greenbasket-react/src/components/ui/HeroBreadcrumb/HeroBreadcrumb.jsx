@@ -1,12 +1,19 @@
 // HeroBreadcrumb Component
 // TODO: Build this reusable UI component
-import styles from './HeroBreadcrumb.module.css';
+// Example: Cart.jsx
+import HeroBreadcrumb from '../../components/ui/HeroBreadcrumb/HeroBreadcrumb';
 
-function HeroBreadcrumb(props) {
+
+// src/components/ui/HeroBreadcrumb/HeroBreadcrumb.jsx
+
+function HeroBreadcrumb({ title, breadcrumb }) {
   return (
-    <div className={styles.wrapper}>
-      <p>HeroBreadcrumb – build me!</p>
-    </div>
+    <section className="hero-section">
+      <div className="hero-wrapper">
+        <h3 className="hero-header">{title}</h3>
+        <h4 className="hero-sub-header">{breadcrumb}</h4>
+      </div>
+    </section>
   );
 }
 
