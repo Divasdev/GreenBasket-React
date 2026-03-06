@@ -43,8 +43,9 @@ export function CartProvider({ children }) {
    const cartCount = cartItems.reduce((total, item) => total + item.qty, 0);
 
    // Total price of everything in the cart
+   // item.price is stored as a string like "$8.00", so we parse it first
    const cartTotal = cartItems.reduce(
-      (total, item) => total + item.price * item.qty,
+      (total, item) => total + parseFloat(item.price.replace('$', '') || 0) * item.qty,
       0
    );
 
